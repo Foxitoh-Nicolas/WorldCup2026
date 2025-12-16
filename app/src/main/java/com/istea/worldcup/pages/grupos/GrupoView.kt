@@ -17,6 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.istea.worldcup.R
 import com.istea.worldcup.domain.Group
+import com.istea.worldcup.pages.detalle.BackgroundImage
 import com.istea.worldcup.pages.grupos.GruposIntention.*
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -43,6 +44,7 @@ fun GruposView(
                 .fillMaxSize()
                 .background(MaterialTheme.colorScheme.background)
         ) {
+            BackgroundImage()
             when (state) {
                 GruposState.Cargando -> Cargando()
                 is GruposState.Resultado -> GroupsList(grupos = state.grupos){
@@ -90,7 +92,7 @@ fun GroupCardView(
             Spacer(modifier = Modifier.height(12.dp))
             grupo.teams.forEach { team ->
                 Text(
-                    text = "Chile",
+                    text = team,
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.fillMaxWidth(),
                     textAlign = TextAlign.Center

@@ -69,7 +69,7 @@ fun DetalleView (
                 navigationIcon = {
                     IconButton(
                         onClick = {
-
+                            onAction(DetalleIntencion.IrParaAtras)
                         }
                     ) {
                         Icon(
@@ -109,7 +109,7 @@ fun Cargando() {
         CircularProgressIndicator(
             modifier = Modifier.size(160.dp),
             strokeWidth = 20.dp,
-            color = Color.Green
+            color = MaterialTheme.colorScheme.primaryContainer
         )
     }
 }
@@ -118,7 +118,7 @@ fun Cargando() {
 fun Contenido(grupo: Group){
     Column {
         Text(
-            text = "Grupo ${grupo.name}" ,
+            text = "${grupo.name}" ,
             style = MaterialTheme.typography.headlineMedium,
             modifier = Modifier.padding(16.dp)
         )
